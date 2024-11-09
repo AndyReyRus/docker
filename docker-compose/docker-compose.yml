@@ -1,0 +1,44 @@
+---
+
+version: "3.5"
+
+services:
+  php-app:
+    image: php:apache
+    container_name: con-php
+    ports:
+      - '80:80'
+    restart: unless-stopped
+    depends_on:
+      - db-app
+      - redis-app
+    networks:
+      - internet
+      - net-app
+
+
+  db-app:
+    image: postgres
+    container_name: con-postgres
+    environment:
+      - 'POSTGRES_PASSWORD=1234567'
+    restart: unless-stopped
+    networks:
+      - net-app
+
+
+  redis-app:
+    image: redis
+    container_name: con-redis
+    restart: unless-stopped
+    networks:
+      - net-app
+
+
+networks:
+  internet:
+    mane: internet
+    driver: bridge
+  net-app:
+    mane: net-app
+    driver: bridge

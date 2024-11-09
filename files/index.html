@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Первая тестовая страница, для отображения в Docker контейнере!</title>
+        <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        button {
+            padding: 10px 15px;
+            background-color: #5cb85c;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #4cae4c;
+        }
+    </style>
+</head>
+<body>
+    <h1>Добро пожаловать на мою первую тестовую страницу!
+           Меня зовут - %OWNER%</h1>
+    <p>Это простая HTML-страница %TYPE%, созданная для тестирования.
+          Прошу сильно не ругать - я только учусь</p>
+    <button onclick="alert('Кнопка нажата!')">Нажми меня</button>
+</body>
+</html>
